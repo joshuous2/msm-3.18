@@ -311,10 +311,6 @@ struct discard_entry {
 #define plist_idx(blk_num)	((blk_num) >= MAX_PLIST_NUM ?		\
 					(MAX_PLIST_NUM - 1) : (blk_num - 1))
 
-#define P_ACTIVE	0x01
-#define P_TRIM		0x02
-#define plist_issue(tag)	(((tag) & P_ACTIVE) || ((tag) & P_TRIM))
-
 enum {
 	D_PREP,
 	D_SUBMIT,

@@ -607,7 +607,7 @@ int recover_fsync_data(struct f2fs_sb_info *sbi, bool check_only)
 	/* Needed for iput() to work correctly and not trash data */
 	sbi->sb->s_flags |= MS_ACTIVE;
 	/* Turn on quotas so that they are updated correctly */
-	f2fs_enable_quota_files(sbi);
+	quota_enabled = f2fs_enable_quota_files(sbi, s_flags & MS_RDONLY);
 #endif
 
 	fsync_entry_slab = f2fs_kmem_cache_create("f2fs_fsync_inode_entry",
