@@ -3374,7 +3374,7 @@ int mdss_dsi_panel_init(struct device_node *node,
 	pinfo->dynamic_switch_pending = false;
 	pinfo->is_lpm_mode = false;
 	pinfo->esd_rdy = false;
-    pinfo->persist_mode = false;
+        pinfo->persist_mode = false;
 	panel_manufacture = of_get_property(node, "qcom,mdss-dsi-panel-manufacture", NULL);
 	if (!panel_manufacture)
 		pr_info("%s:%d, panel manufacture not specified\n", __func__, __LINE__);
