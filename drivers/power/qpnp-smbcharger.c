@@ -6682,24 +6682,6 @@ static int smbchg_get_prop_batt_current_max(struct smbchg_chip *chip)
 	return val.intval;
 }
 
-static int smbchg_get_prop_batt_current_max(struct smbchg_chip *chip)
-{
-	int rc;
-	union power_supply_propval val;
-
-	if (!chip->usb_psy)
-		return -EINVAL;
-
-	rc = power_supply_get_property(chip->usb_psy,
-				POWER_SUPPLY_PROP_CURRENT_MAX, &val);
-	if (rc < 0) {
-		pr_smb(PR_STATUS, "Couldn't get current max rc = %d\n", rc);
-		return rc;
-	}
-
-	return val.intval;
-}
-
 static void update_typec_capability_status(struct smbchg_chip *chip,
 					const union power_supply_propval *val)
 {
